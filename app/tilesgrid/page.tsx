@@ -1,14 +1,12 @@
-// app/tilesgrid/page.tsx
-
 "use client";
 
-import React, { FunctionComponent } from "react";
+import React from "react";
 import CreateYourCurseButton, {
   RegistrationButton,
   ViewCurseButton,
 } from "@/app/components/ui/buttons";
 
-export type Event = {
+type Event = {
   id: number;
   title: string;
   description: string;
@@ -16,11 +14,11 @@ export type Event = {
   organizer: string;
 };
 
-export interface TilesgridProps {
+type TilesgridProps = {
   eventList: Event[];
-}
+};
 
-const Tilesgrid: FunctionComponent<TilesgridProps> = ({ eventList }) => {
+const Tilesgrid = ({ eventList }: TilesgridProps) => {
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -54,4 +52,4 @@ const Tilesgrid: FunctionComponent<TilesgridProps> = ({ eventList }) => {
   );
 };
 
-export default Tilesgrid
+export default Tilesgrid;

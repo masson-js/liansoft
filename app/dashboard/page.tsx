@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Tilesgrid, { Event } from "../tilesgrid/page";
+import Tilesgrid from "../tilesgrid/page";
+
+type Event = {
+  id: number;
+  title: string;
+  description: string;
+  eventDate: string;
+  organizer: string;
+};
 
 export default function Dashboard() {
   const [eventList, setEventList] = useState<Event[]>([]);
