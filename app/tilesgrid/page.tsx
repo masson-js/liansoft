@@ -54,4 +54,4 @@ const Tilesgrid: FunctionComponent<TilesgridProps> = ({ eventList }) => {
   );
 };
 
-export default Tilesgrid;
+export default Tilesgrid
