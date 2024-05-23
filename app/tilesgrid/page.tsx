@@ -1,22 +1,26 @@
+// app/tilesgrid/page.tsx
+
 "use client";
 
+import React, { FunctionComponent } from "react";
 import CreateYourCurseButton, {
   RegistrationButton,
   ViewCurseButton,
 } from "@/app/components/ui/buttons";
 
-type Event = {
+export type Event = {
   id: number;
   title: string;
-  organizer: string;
   description: string;
+  eventDate: string;
+  organizer: string;
 };
 
-type TilesgridProps = {
+export interface TilesgridProps {
   eventList: Event[];
-};
+}
 
-const Tilesgrid: React.FC<TilesgridProps> = ({ eventList }) => {
+const Tilesgrid: FunctionComponent<TilesgridProps> = ({ eventList }) => {
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
