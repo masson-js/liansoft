@@ -5,16 +5,16 @@ import CreateYourCurseButton, {
   ViewCurseButton,
 } from "@/app/components/ui/buttons";
 
-interface Event {
+type Event = {
   id: number;
   title: string;
   organizer: string;
   description: string;
-}
+};
 
 type TilesgridProps = {
   eventList: Event[];
-}
+};
 
 const Tilesgrid: React.FC<TilesgridProps> = ({ eventList }) => {
   return (
@@ -43,9 +43,9 @@ const Tilesgrid: React.FC<TilesgridProps> = ({ eventList }) => {
           </div>
         ))}
       </div>
-        <div className="flex justify-center mt-8">
-          <CreateYourCurseButton />
-        </div>
+      <div className="flex justify-center mt-8">
+        <CreateYourCurseButton />
+      </div>
     </div>
   );
 };

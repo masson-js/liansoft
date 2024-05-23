@@ -10,7 +10,9 @@ type Event = {
   eventDate: string;
   organizer: string;
 }
-
+export interface TilesgridProps {
+  eventList: Event[];
+}
 
 export default function Dashboard() {
   const [eventList, setEventList] = useState<Event[]>([]);
