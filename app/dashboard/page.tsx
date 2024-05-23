@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Tilesgrid from "./tilesgrid/page";
+import Tilesgrid from "../tilesgrid/page";
 
 type Event = {
   id: number;
