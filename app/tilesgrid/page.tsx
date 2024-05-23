@@ -12,7 +12,7 @@ interface Event {
   description: string;
 }
 
-interface TilesgridProps {
+type TilesgridProps = {
   eventList: Event[];
 }
 

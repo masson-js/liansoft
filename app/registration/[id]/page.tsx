@@ -56,7 +56,7 @@ const RegisterForm = () => {
 
     try {
       const response = await fetch(
-        `/api/register/${params.id}`,
+        `api/register/${params.id}`,
         {
           method: "POST",
           headers: {

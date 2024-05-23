@@ -30,7 +30,7 @@ export default function Viewcurse() {
   const fetchingData = async () => {
     try {
       const response = await fetch(
-        `/api/getcurse/${params.id}`,
+        `api/getcurse/${params.id}`,
         {
           method: "GET",
         }
