@@ -19,7 +19,7 @@ export default function Dashboard() {
   const fetchingData = async () => {
     try {
       setLoading(true);
-      const response = await fetch("api/getcurses", {
+      const response = await fetch("https://liansoft2.vercel.app/api/getcurses", {
         method: "GET",
         headers: {
           Accept: "application/json",

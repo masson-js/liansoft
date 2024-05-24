@@ -20,7 +20,7 @@ export default function Createcurse() {
     };
 
     try {
-      const response = await fetch(`api/createcurse`, {
+      const response = await fetch(`https://liansoft2.vercel.app/api/createcurse`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
