@@ -1,15 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Tilesgrid from "../tilesgrid/page";
 
-type Event = {
-  id: number;
-  title: string;
-  description: string;
-  eventDate: string;
-  organizer: string;
-};
+import React from "react";
+import CreateYourCurseButton, {
+  RegistrationButton,
+  ViewCurseButton,
+} from "@/app/components/ui/buttons";
+
+import {TilesgridProps } from "@/app/types"
+
+import { Event } from "@/app/types"
 
 export default function Dashboard() {
   const [eventList, setEventList] = useState<Event[]>([]);
@@ -48,3 +49,37 @@ export default function Dashboard() {
     </div>
   );
 }
+
+ function Tilesgrid({ eventList }: TilesgridProps){
+  return (
+    <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {eventList.map((event) => (
+          <div
+            className="rounded-lg overflow-hidden shadow-lg bg-blue-50 "
+            key={event.id}
+          >
+            <div className="px-6 py-4">
+              <h2 className="font-bold text-xl mb-2 text-blue-900">
+                {event.title}
+              </h2>
+              <p className="text-gray-700 text-base mb-4">
+                {event.description}
+              </p>
+              <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                {event.organizer}
+              </p>
+            </div>
+            <div className="px-6 py-4 flex justify-between">
+              <ViewCurseButton linkto={event.id} />
+              <RegistrationButton linkto={event.id} />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center mt-8">
+        <CreateYourCurseButton />
+      </div>
+    </div>
+  );
+};
