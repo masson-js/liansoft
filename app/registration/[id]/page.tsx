@@ -27,7 +27,7 @@ const RegisterForm = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:3000/api/getcurse/${params.id}`,
+        `https://liansoft2.vercel.app/api/getcurse/${params.id}`,
         { method: "GET" }
       );
 
@@ -70,7 +70,7 @@ const RegisterForm = () => {
         const errorData = await response.json();
         throw new Error(errorData.error || "Failed to register participant");
       }
-      router.push(`/viewcurse/${params.id}`);
+      router.push(`https://liansoft2.vercel.app/viewcurse/${params.id}`);
     } catch (error) {
       console.error("Error registering participant:", error);
     } finally {
